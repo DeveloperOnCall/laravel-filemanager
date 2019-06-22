@@ -90,7 +90,8 @@ class LfmPath
 
     public function url()
     {
-        return $this->storage->url($this->path('url'));
+        $url = $this->storage->url($this->path('url'));
+        return str_replace('storage/uploads','img/uploads', $url);
     }
 
     public function folders()
